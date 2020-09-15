@@ -1,0 +1,102 @@
+/* 
+ * Css Reset
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+ * Site Styles
+ */
+
+body,
+html {
+  background-color: darkslategray;
+	height: 100%;
+}
+
+.vjs-sms-main-wrapper {
+	height: 100%;
+  min-height: 100%;
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vjs-sms-story-display {
+  background-color: slategray;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-height: 700px;
+  max-width: 400px;
+  position: relative;
+  width: 100%;
+}
+
+.vjs-sms-story-display video {
+  height: 100%;
+}
+
+.vjs-sms-progress {
+  display: flex;
+  padding: 15px;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.vjs-sms-progress progress {
+  margin: 0 2px;
+  height: 5px;
+  border-radius: 5px;
+}
+
+.vjs-sms-progress progress[value]::-webkit-progress-bar {
+  background-color: rgb(174, 174, 174);
+}
+
+.vjs-sms-progress progress[value]::-webkit-progress-value {
+  background-color: rgb(65, 65, 65);
+}
