@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vanilla JS Social Media Stories</title>
   <meta name="description" content="Vanilla JS Social Media Stories">
   <meta name="author" content="SitePoint">
@@ -9,15 +10,14 @@
 </head>
 
 <body>
-  <div class="vjs-sms-main-wrapper">
-    <div class="vjs-sms-story-display">
-      <div class="vjs-sms-progress">
-        <progress id="test" value="100" max="100">100%</progress>
-        <progress id="test2" value="100" max="100">100%</progress>
-        <progress id="test3" value="34" max="100">34%</progress>
-        <progress id="test4" value="0" max="100">0%</progress>
-        <progress id="test5" value="0" max="100">0%</progress>
+  <div class="sms-main-wrapper">
+    <div class="sms-story-display">
+      <div class="sms-progress"></div>
+      <div class="sms-invisible-controls">
+        <div class="sms-button sms-button-prev"></div>
+        <div class="sms-button sms-button-next"></div>
       </div>
+      <button class="sms-sound-toggle">Sound On</button>
     </div>
   </div>
   <script src="js/scripts.js"></script>

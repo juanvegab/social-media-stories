@@ -55,7 +55,7 @@ html {
 	height: 100%;
 }
 
-.vjs-sms-main-wrapper {
+.sms-main-wrapper {
 	height: 100%;
   min-height: 100%;
 	display: flex;
@@ -64,7 +64,7 @@ html {
   justify-content: center;
 }
 
-.vjs-sms-story-display {
+.sms-story-display {
   background-color: slategray;
   display: flex;
   flex-direction: column;
@@ -75,28 +75,61 @@ html {
   width: 100%;
 }
 
-.vjs-sms-story-display video {
+.sms-story-display video {
   height: 100%;
+  object-fit: cover;
 }
 
-.vjs-sms-progress {
+.sms-progress {
   display: flex;
   padding: 15px;
   position: absolute;
   left: 0;
   right: 0;
+  z-index: 10;
 }
 
-.vjs-sms-progress progress {
+.sms-progress progress {
   margin: 0 2px;
   height: 5px;
   border-radius: 5px;
 }
 
-.vjs-sms-progress progress[value]::-webkit-progress-bar {
+.sms-progress progress[value]::-webkit-progress-bar {
   background-color: rgb(174, 174, 174);
 }
 
-.vjs-sms-progress progress[value]::-webkit-progress-value {
+.sms-progress progress[value]::-webkit-progress-value {
   background-color: rgb(65, 65, 65);
+}
+
+.sms-invisible-controls {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.sms-button {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.sms-button-next {
+  right: 0;
+}
+
+.sms-sound-toggle {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100;
 }
