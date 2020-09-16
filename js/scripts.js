@@ -76,12 +76,10 @@ const setUpButtons = () => {
   $('.sms-button-next').onclick = () => loadNextVideo();
   const bothButtons = $('.sms-button');
   bothButtons.forEach((button) => {
-    button.oncontextmenu = () => false
-    button.onmousemove = () => mouseIsUp();
-    button.onmousedown = () => pauseVideo();
-    button.onmouseup = () => mouseIsUp();
-    button.ontouchstart = () => pauseVideo();
-    button.ontouchends = () => mouseIsUp();
+    button.oncontextmenu = () => false;
+    button.ontouchstart = (e) => e.preventDefault();
+    button.onpointerdown = () => pauseVideo();
+    button.onpointerup = () => mouseIsUp();
   });
   
   const soundButton = $('.sms-sound-toggle');
