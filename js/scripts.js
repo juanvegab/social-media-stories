@@ -66,11 +66,16 @@ const clearProgressBars = () => {
 const setUpButtons = () => {
   $('.sms-button-prev').onclick = () => loadPrevVideo();
   $('.sms-button-next').onclick = () => loadNextVideo();
-  $('.sms-button').forEach((button) => button.onmousedown = () => pauseVideo());
-  $('.sms-button').forEach((button) => button.onmouseup = () => mouseIsUp());
-  $('.sms-sound-toggle').onclick = () => {
+  const bothButtons = $('.sms-button');
+  bothButtons.forEach((button) => button.onmousedown = () => pauseVideo());
+  bothButtons.forEach((button) => button.onmouseup = () => mouseIsUp());
+  bothButtons.forEach((button) => button.ontouchstart = () => pauseVideo());
+  bothButtons.forEach((button) => button.ontouchends = () => mouseIsUp());
+  
+  const soundButton = $('.sms-sound-toggle');
+  soundButton.onclick = () => {
     state.video.muted = state.isSoundOn;
-    $('.sms-sound-toggle').innerHTML = state.isSoundOn ? 'Sound On' : 'Sound Off';
+    soundButton.innerHTML = state.isSoundOn ? 'Sound On' : 'Sound Off';
     state.isSoundOn = !state.isSoundOn;
   }
 }
@@ -139,6 +144,7 @@ const displayVideo = () => {
   videoRef.muted = true;
   videoRef.autoplay = true;
   videoRef.playsinline = true;
+  videoRef.disablePictureInPicture = true;
   videoRef.onended = () => {
     state.isStoryChangeAllowed = true;
     loadNextVideo();
