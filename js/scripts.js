@@ -72,14 +72,8 @@ const clearProgressBars = () => {
 // =========== Control Buttons Handling =========== 
 
 const setUpButtons = () => {
-  $('.sms-button-prev').onclick = () => {
-    console.log('click');
-    loadPrevVideo();
-  }
-  $('.sms-button-next').onclick = () => {
-    console.log('click');
-    loadNextVideo();
-  }
+  $('.sms-button-prev').onclick = () => loadPrevVideo();
+  $('.sms-button-next').onclick = () => loadNextVideo();
   const bothButtons = $('.sms-button');
   bothButtons.forEach((button) => {
     button.oncontextmenu = () => false;
