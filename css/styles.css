@@ -116,6 +116,8 @@ html {
   right: 0;
   cursor: pointer;
   z-index: 100;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 .sms-button {
@@ -124,6 +126,8 @@ html {
   position: absolute;
   top: 0;
   bottom: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 .sms-button-next {

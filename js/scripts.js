@@ -72,12 +72,18 @@ const clearProgressBars = () => {
 // =========== Control Buttons Handling =========== 
 
 const setUpButtons = () => {
-  $('.sms-button-prev').onclick = () => loadPrevVideo();
-  $('.sms-button-next').onclick = () => loadNextVideo();
+  $('.sms-button-prev').onclick = () => {
+    console.log('click');
+    loadPrevVideo();
+  }
+  $('.sms-button-next').onclick = () => {
+    console.log('click');
+    loadNextVideo();
+  }
   const bothButtons = $('.sms-button');
   bothButtons.forEach((button) => {
     button.oncontextmenu = () => false;
-    button.ontouchstart = (e) => e.preventDefault();
+    // button.ontouchstart = (e) => e.bubbles = false;
     button.onpointerdown = () => pauseVideo();
     button.onpointerup = () => mouseIsUp();
   });
