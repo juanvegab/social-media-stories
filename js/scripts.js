@@ -27,6 +27,14 @@ const storePagingData = () => {
     videoIndex : state.videoIndex,
   }));
 }
+
+const preventContextOnHold = (event) => {
+  event = event || window.event;
+  if (event.stopPropagation) event.stopPropagation();
+  // if (event.preventDefault) event.preventDefault();
+  event.cancelBubble = true;
+  return false;
+}
 // =========== Utils Functions =========== 
 
 
@@ -67,10 +75,14 @@ const setUpButtons = () => {
   $('.sms-button-prev').onclick = () => loadPrevVideo();
   $('.sms-button-next').onclick = () => loadNextVideo();
   const bothButtons = $('.sms-button');
-  bothButtons.forEach((button) => button.onmousedown = () => pauseVideo());
-  bothButtons.forEach((button) => button.onmouseup = () => mouseIsUp());
-  bothButtons.forEach((button) => button.ontouchstart = () => pauseVideo());
-  bothButtons.forEach((button) => button.ontouchends = () => mouseIsUp());
+  bothButtons.forEach((button) => {
+    button.oncontextmenu = () => false
+    button.onmousemove = () => mouseIsUp();
+    button.onmousedown = () => pauseVideo();
+    button.onmouseup = () => mouseIsUp();
+    button.ontouchstart = () => pauseVideo();
+    button.ontouchends = () => mouseIsUp();
+  });
   
   const soundButton = $('.sms-sound-toggle');
   soundButton.onclick = () => {
@@ -145,6 +157,7 @@ const displayVideo = () => {
   videoRef.autoplay = true;
   videoRef.playsinline = true;
   videoRef.disablePictureInPicture = true;
+  videoRef.setAttribute("tabIndex", "-1");
   videoRef.onended = () => {
     state.isStoryChangeAllowed = true;
     loadNextVideo();
