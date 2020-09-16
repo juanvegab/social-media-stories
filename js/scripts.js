@@ -138,6 +138,7 @@ const displayVideo = () => {
   videoRef.controls = false;
   videoRef.muted = true;
   videoRef.autoplay = true;
+  videoRef.playsinline = true;
   videoRef.onended = () => {
     state.isStoryChangeAllowed = true;
     loadNextVideo();

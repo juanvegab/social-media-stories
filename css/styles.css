@@ -73,6 +73,9 @@ html {
   max-width: 400px;
   position: relative;
   width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid lightgray;
 }
 
 .sms-story-display video {
@@ -96,11 +99,11 @@ html {
 }
 
 .sms-progress progress[value]::-webkit-progress-bar {
-  background-color: rgb(174, 174, 174);
+  background-color: rgb(0, 0, 0, 0.3);
 }
 
 .sms-progress progress[value]::-webkit-progress-value {
-  background-color: rgb(65, 65, 65);
+  background-color: rgb(0, 0, 0, 0.8);
 }
 
 .sms-invisible-controls {
@@ -112,7 +115,7 @@ html {
   left: 0;
   right: 0;
   cursor: pointer;
-  z-index: 10;
+  z-index: 100;
 }
 
 .sms-button {
@@ -131,5 +134,5 @@ html {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  z-index: 100;
+  z-index: 1000;
 }
