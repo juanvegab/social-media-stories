@@ -153,7 +153,7 @@ const displayVideo = () => {
   videoRef.controls = false;
   videoRef.muted = true;
   videoRef.autoplay = true;
-  videoRef.playsinline = true;
+  videoRef.playsInline = true;
   videoRef.disablePictureInPicture = true;
   videoRef.setAttribute("tabIndex", "-1");
   videoRef.onended = () => {
